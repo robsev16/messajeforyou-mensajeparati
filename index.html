@@ -4,9 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
   <title>Un mensaje para ti</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #101828, #243b53);
@@ -22,20 +27,21 @@
     .card {
       max-width: 560px;
       width: 100%;
-      background: white;
+      background: #fff;
       color: #172033;
       border-radius: 24px;
       padding: 28px;
       box-shadow: 0 12px 40px #0006;
-      box-sizing: border-box;
     }
 
     h1 {
       font-size: 32px;
+      margin-top: 10px;
     }
 
     h2 {
       font-size: 25px;
+      line-height: 1.3;
     }
 
     p {
@@ -50,6 +56,7 @@
     }
 
     .verse {
+      display: block;
       border-left: 4px solid #2563eb;
       padding-left: 14px;
       font-style: italic;
@@ -66,6 +73,7 @@
       color: white;
       font-size: 16px;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
 
     button:active {
@@ -91,6 +99,34 @@
       width: 10%;
       transition: width 0.3s ease;
     }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 16px 12px;
+      }
+    }
   </style>
 </head>
 
@@ -112,7 +148,7 @@
         Encuentras un mensaje que te invita a detenerte.
       </p>
 
-      <button onclick="show(1)">
+      <button data-next="1">
         Leer el mensaje
       </button>
     </section>
@@ -221,28 +257,60 @@
       ]
     };
 
+    const screen = document.getElementById("screen");
+    const bar = document.getElementById("bar");
+
     function show(i) {
       if (i === 0) {
-        location.reload();
+        window.location.href = window.location.pathname;
         return;
       }
 
       const x = s[i];
 
-      document.getElementById("screen").innerHTML =
+      if (!x) {
+        screen.innerHTML = "<p>Ha ocurrido un error. Intenta nuevamente.</p>";
+        return;
+      }
+
+      screen.innerHTML =
         "<h2>" + x[0] + "</h2>" +
         "<p>" + x[1] + "</p>" +
         x[2].map(function (b) {
-          return '<button class="' +
-            (b[1] === 0 ? 'alt' : '') +
-            '" onclick="show(' + b[1] + ')">' +
+          return '<button data-next="' + b[1] + '">' +
             b[0] +
             "</button>";
         }).join("");
 
-      document.getElementById("bar").style.width =
-        (i / 10 * 100) + "%";
+      const buttons = screen.querySelectorAll("button");
+
+      buttons.forEach(function (button) {
+        if (button.dataset.next === "0") {
+          button.classList.add("alt");
+        }
+      });
+
+      bar.style.width = Math.min((i / 10) * 100, 100) + "%";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
+
+    screen.addEventListener("click", function (event) {
+      const button = event.target.closest("button");
+
+      if (!button) {
+        return;
+      }
+
+      const next = Number(button.dataset.next);
+
+      if (!Number.isNaN(next)) {
+        show(next);
+      }
+    });
   </script>
 </body>
 </html>
