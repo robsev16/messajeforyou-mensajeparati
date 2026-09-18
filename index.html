@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Message for You | Un Mensaje para Ti</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Hk8LarHZQ5vvlLz-ALzOD_xxUmgRxQklFkZGtUEOnACoinmdzLn-77iEYcsVfdSrSwotDbWZuGK7mteNaSNdYzETtNPq-iGhy1-envkhGoxe5GqgDDXxTUYXAbn2lRXhYJ85NJ0U5_mBJhBxi_J57Q6OKBpDZ5MWvSZDypAk1il44a5cVSeP9Rbhj4XpXsfdBBs6o9DQPjUBZvV4AYt_H2b6NkYCJkXw43amMAjjmMVSCpHIFDOWWD2oImLMi1cX3pDC22ibpM_V-w1LIeLINgEpgPijhMCQwpFTjGtjyE8crnUMUU-Ffk5mMrAatKBP" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMGUxZjA4MWY1OTQyZWJlMGI3NDliNGRjOSZmbj1pbmRleF9iaWxpbmd1YWwuaHRtbCZjZD1hdHRhY2htZW50JnRzPTQ5NzE1NSZwPWZzJmNpZD0xJnNpZz1kNDNmMmNlYjI1M2MxZjA0YjBlOWZkZjgxY2I5YzhlYTYwZGMyNDZhYmIyZGZiYjIzMTE0YTkzMzVjMzE4NWM4JnY9MA"/><style>
+*{box-sizing:border-box}body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#101828,#243b53);color:#172033;margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}.card{max-width:600px;width:100%;background:#fff;border-radius:24px;padding:28px;box-shadow:0 12px 40px #0006}.tag,.small{font-size:12px;color:#64748b}h1{font-size:32px}h2{font-size:25px}p,li{font-size:17px;line-height:1.6}.verse{border-left:4px solid #2563eb;padding-left:14px;font-style:italic}button{display:block;width:100%;margin:12px 0;padding:15px;border:0;border-radius:14px;background:#2563eb;color:white;font-size:16px;cursor:pointer}.alt{background:#e2e8f0;color:#172033}.languages{display:grid;grid-template-columns:1fr 1fr;gap:12px}.languages button{min-height:80px;font-weight:bold}.progress{height:6px;background:#e2e8f0;border-radius:8px;overflow:hidden;margin:20px 0}.bar{height:100%;background:#2563eb;width:0%;transition:width .2s}.hidden{display:none}@media(max-width:420px){.card{padding:22px}h1{font-size:28px}h2{font-size:23px}p{font-size:16px}.languages{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="tag">Interactive gospel message · Assemblies of God</div>
+<section id="screen">
+<h1>A Message for You</h1>
+<p>Before you begin, choose your preferred language.</p>
+<div class="languages"><button data-lang="en">English</button><button data-lang="es">Español</button></div>
+</section>
+<div id="progress" class="progress hidden"><div id="bar" class="bar"></div></div>
+<p id="footer" class="small hidden"></p>
+</main>
+<script>
+const data={
+en:{footer:"Your choices shape the journey. There are no perfect answers.",start:["A Message for You",["Picture this: you're having one of those days. You're stressed, overwhelmed, or carrying stuff you don't know how to explain.","Then you come across a message inviting you to pause for a moment."],"Read the message"],pages:{
+1:["How Do You Respond?","When life gets hard, what do you usually do?",[["I keep it all to myself",2],["I look for someone to talk to",3],["I distract myself so I don't have to think",4]]],
+2:["When You Carry Everything Alone","Maybe you smile around people, but deep down you're exhausted—and it feels like nobody really knows what you're carrying. God knows your heart. You don't have to fake being okay with Him. You can come to Him honestly, bring your weariness, and find hope in Jesus Christ.",[["Keep going",5]]],
+3:["When You Look for Someone to Talk To","Having people who listen matters. Friends can support you, walk with you, and remind you that you're not alone. But no person can take God's place. Jesus invites you to come to Him in faith and grow alongside a community of believers.",[["Keep going",5]]],
+4:["When You Try to Distract Yourself","Maybe you fill your day with videos, games, music, or conversations so you don't have to sit with your thoughts. You are not invisible to God. He does not reject your questions or your pain. Bring what you're carrying to Him and discover the hope found in Christ.",[["Keep going",5]]],
+5:["A Truth for Everyone","The Bible says that everyone has sinned and falls short of God's glory (Romans 3:23). Sin is more than making mistakes. It is turning away from God and trying to live independently from Him. We cannot restore our relationship with God through our own goodness.",[["Discover God's answer",6]]],
+6:["God Took the Initiative","God loves you, and He took the initiative to save us. Jesus Christ, God's Son, lived without sin, died on the cross for our sins, and rose again. Salvation is by grace through faith in Jesus—not something we can earn through good works.",[["How can I respond?",7]]],
+7:["A Personal Response","The biblical response is to repent and believe in Jesus. Repentance means turning away from sin and toward God. Faith means trusting Jesus as your Savior and Lord. The Holy Spirit brings new life and begins a work of transformation in you.",[["I want to know more",8],["I want to think and read the Bible",9]]],
+8:["Get to Know Jesus","If you want to know more about Jesus, connect with a nearby Assemblies of God church. Hear God's Word, ask honest questions, and receive spiritual support. Begin by reading John and praying. We teach that baptism in the Holy Spirit is distinct from and subsequent to the new birth, empowers believers to witness and serve, and is not required for salvation.",[["Read a promise",10]]],
+9:["Take a Moment","You don't have to respond because of pressure. Read the Bible and talk with someone mature in the faith. Consider who Jesus is, what He did on the cross, and what it means to trust Him with repentance and faith.",[["Take the next step",11]]],
+11:["Take the Next Step","Connect with a nearby Assemblies of God church. Hear God's Word, ask questions, meet other believers, and receive spiritual support. You don't have to walk alone. Find a community where Christ is proclaimed, the Bible is taught, and you can grow in faith.",[["Read a promise",10]]],
+10:["A Promise from Jesus","“Come to me, all you who are weary and burdened, and I will give you rest.” — Matthew 11:28\n\nJesus invites you to come to Him honestly.",[["Start over",0]]]}},
+es:{footer:"Tus respuestas cambian el recorrido. No hay respuestas perfectas.",start:["Un mensaje para ti",["Imagina que estás teniendo uno de esos días difíciles. Estás estresado, agotado o cargando cosas que no sabes cómo explicar.","Entonces encuentras un mensaje que te invita a detenerte por un momento."],"Leer el mensaje"],pages:{
+1:["¿Cómo reaccionas?","Cuando la vida se vuelve difícil, ¿qué sueles hacer?",[["Me guardo todo",2],["Busco a alguien con quien hablar",3],["Me distraigo para no pensar",4]]],
+2:["Cuando cargas todo tú solo","Quizá sonríes delante de los demás, pero por dentro estás agotado. Dios conoce tu corazón. No tienes que fingir delante de Él. Puedes acercarte con sinceridad, llevarle tu cansancio y encontrar esperanza en Jesucristo.",[["Continuar",5]]],
+3:["Cuando buscas a alguien con quien hablar","Contar con personas que te escuchen es importante. Tus amigos pueden apoyarte y caminar contigo, pero ninguna persona puede ocupar el lugar de Dios. Jesús te invita a acercarte a Él con fe y a crecer junto a una comunidad de creyentes.",[["Continuar",5]]],
+4:["Cuando intentas distraerte","Quizá llenas tu día de videos, juegos, música o conversaciones para no pensar. No eres invisible para Dios. Él no rechaza tus preguntas ni tu dolor. Puedes presentar tus cargas delante de Él y descubrir la esperanza que hay en Cristo.",[["Continuar",5]]],
+5:["Una verdad para todos","La Biblia dice que todos hemos pecado y estamos destituidos de la gloria de Dios (Romanos 3:23). El pecado es más que cometer errores; es alejarnos de Dios e intentar vivir independientemente de Él. No podemos restaurar nuestra relación con Dios mediante nuestra propia bondad.",[["Descubrir la respuesta de Dios",6]]],
+6:["Dios tomó la iniciativa","Dios te ama y tomó la iniciativa para salvarnos. Jesucristo, el Hijo de Dios, vivió sin pecado, murió en la cruz por nuestros pecados y resucitó. La salvación es por gracia mediante la fe en Jesús, no algo que podamos ganar por nuestras buenas obras.",[["¿Cómo puedo responder?",7]]],
+7:["Una respuesta personal","La respuesta bíblica es arrepentirse y creer en Jesús. Arrepentirse significa apartarse del pecado y volverse hacia Dios. Tener fe significa confiar en Jesús como tu Salvador y Señor. El Espíritu Santo produce nueva vida y comienza una obra de transformación en ti.",[["Quiero conocer más",8],["Quiero pensar y leer la Biblia",9]]],
+8:["Conoce más de Jesús","Si deseas conocer más de Jesús, busca una iglesia cercana de las Asambleas de Dios. Allí podrás escuchar la Palabra, hacer preguntas y recibir acompañamiento espiritual. Puedes comenzar leyendo Juan y orando. Enseñamos que el bautismo en el Espíritu Santo es distinto y posterior al nuevo nacimiento, capacita para testificar y servir, y no es requisito para la salvación.",[["Leer una promesa",10]]],
+9:["Tómate un momento","No tienes que responder por presión. Lee la Biblia y habla con alguien maduro en la fe. Considera quién es Jesús, qué hizo en la cruz y qué significa confiar en Él con arrepentimiento y fe.",[["Da el siguiente paso",11]]],
+11:["Da el siguiente paso","Busca una iglesia cercana de las Asambleas de Dios. Escucha la Palabra, haz preguntas, conoce a otros creyentes y recibe acompañamiento espiritual. No tienes que caminar solo. Busca una comunidad donde Cristo sea anunciado, la Biblia sea enseñada y puedas crecer en la fe.",[["Leer una promesa",10]]],
+10:["Una promesa de Jesús","«Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar». — Mateo 11:28\n\nJesús te invita a acercarte a Él con sinceridad.",[["Volver al inicio",0]]]}}
+};
+let lang=null;
+const screen=document.getElementById("screen"),bar=document.getElementById("bar"),progress=document.getElementById("progress"),footer=document.getElementById("footer");
+function paragraphs(text){return text.split("\n\n").map(t=>{const p=document.createElement("p");p.textContent=t;if(t.includes("Matthew 11:28")||t.includes("Mateo 11:28"))p.className="verse";return p;});}
+function render(id){
+screen.innerHTML="";
+if(id==="start"){const [title,texts,buttonText]=data[lang].start;const h=document.createElement("h1");h.textContent=title;screen.appendChild(h);texts.forEach(t=>{const p=document.createElement("p");p.textContent=t;screen.appendChild(p)});const b=document.createElement("button");b.textContent=buttonText;b.dataset.next="1";screen.appendChild(b);bar.style.width="0%";return;}
+if(id===0){render("start");return;}
+const page=data[lang].pages[id];if(!page)return;
+const h=document.createElement("h2");h.textContent=page[0];screen.appendChild(h);paragraphs(page[1]).forEach(p=>screen.appendChild(p));
+page[2].forEach(([label,next])=>{const b=document.createElement("button");b.textContent=label;b.dataset.next=next;if(next===0)b.className="alt";screen.appendChild(b)});
+bar.style.width=Math.min(Number(id)/10*100,100)+"%";
+}
+screen.addEventListener("click",e=>{const l=e.target.closest("[data-lang]");if(l){lang=l.dataset.lang;footer.textContent=data[lang].footer;footer.classList.remove("hidden");progress.classList.remove("hidden");render("start");return;}const b=e.target.closest("[data-next]");if(b)render(Number(b.dataset.next));});
+</script>
+</body>
+</html>
